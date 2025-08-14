@@ -1,0 +1,70 @@
+---
+// src/components/Icon.astro
+import Github from "./icons/github.astro";
+
+const iconMap = {
+	github: Github,
+	// menu: Menu,
+	// x: X,
+	// sun: Sun,
+} as const;
+
+interface Props {
+	name?: keyof typeof iconMap;
+	/** Pass an Astro component that renders only <path>/<g> (no outer <svg>) */
+	glyph?: any;
+	size?: number | string;
+	color?: string; // uses currentColor by default via CSS
+	variant?: "outline" | "solid";
+	viewBox?: string;
+	strokeWidth?: number;
+	title?: string; // set for accessible, non-decorative icons
+	decorative?: boolean; // true hides from AT (aria-hidden)
+	class?: string;
+	[attr: string]: any; // allow arbitrary SVG attributes
+}
+
+const {
+	name,
+	glyph,
+	size = 24,
+	color = "currentColor",
+	variant = "outline",
+	viewBox = "0 0 24 24",
+	strokeWidth = 2,
+	title,
+	decorative,
+	class: className,
+	...rest
+} = Astro.props as Props;
+
+const isDecorative = decorative ?? !title;
+const role = isDecorative ? "presentation" : "img";
+const ariaHidden = isDecorative ? "true" : undefined;
+const TitleId = `i-${Math.random().toString(36).slice(2)}`;
+
+const Cmp = name ? iconMap[name] : glyph;
+
+const stroke = variant === "outline" ? "currentColor" : undefined;
+const fill = variant === "solid" ? "currentColor" : "none";
+---
+
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	width={size}
+	height={size}
+	viewBox={viewBox}
+	stroke={stroke}
+	fill={fill}
+	stroke-width={strokeWidth}
+	class={className}
+	style={`color:${color};`}
+	role={role}
+	aria-hidden={ariaHidden}
+	aria-labelledby={!isDecorative && title ? TitleId : undefined}
+	focusable="false"
+	{...rest}
+>
+	{!isDecorative && title ? <title id={TitleId}>{title}</title> : null}
+	{Cmp ? <Cmp /> : <slot />}
+</svg>

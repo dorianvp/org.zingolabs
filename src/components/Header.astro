@@ -1,0 +1,60 @@
+---
+import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
+import { SunMediumIcon } from "lucide-react";
+import Github from "./ui/icons/github.astro";
+import Icon from "./ui/Icon.astro";
+import { NavMenu } from "./ui/nav-menu";
+---
+
+<header class="sticky top-4 z-50 mx-20">
+	<nav
+		class="border border-gray-300 rounded-2xl bg-background/50 px-6 backdrop-blur-md"
+	>
+		<h2 class="flex flex-row items-center justify-center">
+			<SunMediumIcon />
+			<a href="/">{SITE_TITLE}</a>
+		</h2>
+		<div class="internal-links">
+			<NavMenu client:load />
+			<!-- <HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink> -->
+		</div>
+		<div class="social-links">
+			<a
+				href="https://github.com/zingolabs"
+				target="_blank"
+				class="inline-flex items-center"
+			>
+				<span class="sr-only">Go to Zingolabs's GitHub org</span>
+				<Icon name="github" variant="outline" />
+			</a>
+		</div>
+	</nav>
+</header>
+<style>
+	h2 {
+		margin: 0;
+		font-size: 1em;
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	nav a {
+		padding: 1em 1em;
+		text-decoration: none;
+	}
+	.social-links,
+	.social-links a {
+		display: flex;
+	}
+	@media (max-width: 720px) {
+		.social-links {
+			display: none;
+		}
+	}
+</style>
