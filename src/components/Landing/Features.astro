@@ -3,34 +3,26 @@ import { HatGlassesIcon, ShieldIcon } from "lucide-react";
 import { Card } from "../ui/card";
 ---
 
-<section class="py-5 md:py-24 relative z-10">
+<section class="py-5 md:py-10 relative z-10">
 	<div class="container mx-auto px-4">
 		<div class="max-w-6xl mx-auto">
-			<h2
-				class="text-3xl md:text-5xl font-bold font-space-grotesk text-center mb-4 md:mb-16"
-			>
+			<h2 class="text-3xl md:text-5xl font-bold text-center mb-4 md:mb-8">
 				What's coming
 			</h2>
 
-			<div class="flex justify-center">
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl">
+			<div class="flex justify-center items-center text-center">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 max-w-5xl">
 					{/* Easy Privacy - Hero feature */}
 					<Card
-						className="p-10 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden"
+						className="p-10 bg-white/50 border-primary/30 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden"
 					>
-						<div
-							class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-						>
-						</div>
-						<div class="relative z-10">
+						<div class="relative z-10 flex flex-col items-center text-center">
 							<div
 								class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors duration-300 group-hover:scale-110 transform"
 							>
-								<HatGlassesIcon className="w-8 h-8 text-primary" />
+								<HatGlassesIcon className="w-8 h-8 text-muted-primary" />
 							</div>
-							<h3
-								class="text-2xl font-bold font-space-grotesk text-foreground mb-4 group-hover:text-primary transition-colors"
-							>
+							<h3 class="text-2xl font-black text-foreground mb-4">
 								Easy Privacy
 							</h3>
 							<p class="text-muted-foreground leading-relaxed text-lg mb-4">
@@ -42,13 +34,9 @@ import { Card } from "../ui/card";
 
 					{/* Lightning-Fast Sync - Performance feature */}
 					<Card
-						className="p-10 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent border-accent/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden"
+						className="p-10 bg-white/50 border-accent/30 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden"
 					>
-						<div
-							class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-						>
-						</div>
-						<div class="relative z-10">
+						<div class="relative z-10 flex flex-col items-center text-center">
 							<div
 								class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-accent/30 transition-colors duration-300 group-hover:scale-110 transform"
 							>
@@ -65,9 +53,7 @@ import { Card } from "../ui/card";
 										d="M13 10V3L4 14h7v7l9-11h-7z"></path>
 								</svg>
 							</div>
-							<h3
-								class="text-2xl font-bold font-space-grotesk text-foreground mb-4 group-hover:text-accent transition-colors"
-							>
+							<h3 class="text-2xl font-black text-foreground mb-4">
 								High-performance
 							</h3>
 							<p class="text-muted-foreground leading-relaxed text-lg mb-4">
@@ -79,13 +65,9 @@ import { Card } from "../ui/card";
 
 					{/* Future-Ready Architecture - Innovation feature */}
 					<Card
-						className="p-10 bg-gradient-to-br from-secondary/10 via-secondary/5 to-transparent border-secondary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden"
+						className="p-10 bg-white/50 border-secondary/30 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden"
 					>
-						<div
-							class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-						>
-						</div>
-						<div class="relative z-10">
+						<div class="relative z-10 flex flex-col items-center text-center">
 							<div
 								class="w-16 h-16 bg-secondary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary/30 transition-colors duration-300 group-hover:scale-110 transform"
 							>
@@ -103,9 +85,7 @@ import { Card } from "../ui/card";
 									></path>
 								</svg>
 							</div>
-							<h3
-								class="text-2xl font-bold font-space-grotesk text-foreground mb-4 group-hover:text-secondary transition-colors"
-							>
+							<h3 class="text-2xl font-black text-foreground mb-4">
 								Future-proof
 							</h3>
 							<p class="text-muted-foreground leading-relaxed text-lg mb-4">
