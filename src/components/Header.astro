@@ -1,39 +1,36 @@
 ---
 import { SITE_TITLE } from "../consts";
-import HeaderLink from "./HeaderLink.astro";
 import { SunMediumIcon } from "lucide-react";
-import Github from "./ui/icons/github.astro";
 import Icon from "./ui/Icon.astro";
-import { NavMenu } from "./ui/nav-menu";
 ---
 
-<header class="sticky top-4 z-50 mx-20">
-	<nav
-		class="border border-gray-300 rounded-2xl bg-background/50 px-6 backdrop-blur-md"
-	>
-		<h2 class="flex flex-row items-center justify-center">
-			<SunMediumIcon />
-			<a href="/">{SITE_TITLE}</a>
+<header class="z-50 mx-2 md:mx-20">
+	<nav class="p-3 md:p-6 backdrop-blur-md flex items-center justify-between">
+		<h2 class="flex items-center gap-1 leading-none text-lg">
+			<SunMediumIcon className="w-5 h-5 align-middle" />
+			<span class="align-middle">/</span>
+			<SunMediumIcon className="w-5 h-5 align-middle" />
+			<a href="/" class="font-extrabold align-middle leading-none"
+				>{SITE_TITLE}</a
+			>
 		</h2>
-		<div class="internal-links">
-			<NavMenu client:load />
-			<!-- <HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink> -->
-		</div>
-		<div class="social-links">
+		<div class="flex items-center gap-3 md:gap-5 font-bold leading-none">
+			<a class="inline-flex items-center leading-none" href="#">blog</a>
+			<a class="inline-flex items-center leading-none" href="#">legacy zingo</a>
 			<a
 				href="https://github.com/zingolabs"
 				target="_blank"
-				class="inline-flex items-center"
+				rel="noopener noreferrer"
+				class="inline-flex items-center gap-2 leading-none"
 			>
 				<span class="sr-only">Go to Zingolabs's GitHub org</span>
-				<Icon name="github" variant="outline" />
+				<Icon name="github" variant="outline" class="w-6 h-6 align-middle" />
 			</a>
 		</div>
 	</nav>
 </header>
 <style>
+	/* TODO: Convert these styles into tailwind styles */
 	h2 {
 		margin: 0;
 		font-size: 1em;
@@ -43,14 +40,6 @@ import { NavMenu } from "./ui/nav-menu";
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 1em;
-		text-decoration: none;
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
 	}
 	@media (max-width: 720px) {
 		.social-links {
