@@ -14,11 +14,11 @@ import Features from "@/components/Landing/Features.astro";
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="min-h-screen">
+	<body class="min-h-dvh flex flex-col">
 		<Background />
 		<Header />
 		<main
-			class="flex flex-col items-center justify-center gap-4 lg:gap-8 pt-28 md:pt-56 pb-12 lg:pb-16"
+			class="flex flex-col items-center justify-center gap-4 lg:gap-8 pt-28 md:pt-56 pb-12 lg:pb-16 flex-grow"
 		>
 			<h1 class="text-center font-bold text-4xl md:text-5xl lg:text-6xl">
 				<span class="font-black">Safe</span> & <span class="font-black"

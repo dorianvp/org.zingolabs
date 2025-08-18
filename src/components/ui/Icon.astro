@@ -1,9 +1,11 @@
 ---
 // src/components/Icon.astro
 import Github from "./icons/github.astro";
+import Zingo from "./icons/zingo.astro";
 
 const iconMap = {
 	github: Github,
+	zingo: Zingo,
 	// menu: Menu,
 	// x: X,
 	// sun: Sun,
@@ -28,7 +30,7 @@ const {
 	name,
 	glyph,
 	size = 24,
-	color = "currentColor",
+	color = "",
 	variant = "outline",
 	viewBox = "0 0 24 24",
 	strokeWidth = 2,
