@@ -7,6 +7,7 @@ import "@/styles/global.css";
 import { Button } from "@/components/ui/button";
 import Background from "@/components/ui/Background/background.astro";
 import Features from "@/components/Landing/Features.astro";
+import { Link } from "@/components/ui/buttonlink";
 ---
 
 <!doctype html>
@@ -35,8 +36,10 @@ import Features from "@/components/Landing/Features.astro";
 			<div
 				class="animate-[scale-in_.6s_ease-out_.12s_both] delay-1000 flex flex-col md:flex-row items-center justify-center gap-2"
 			>
-				<Button className="md:mr-4 hover:brightness-110 hover:saturate-110"
-					>latest news</Button
+				<Link
+					href="/zingo/blog"
+					className="md:mr-4 hover:brightness-110 hover:saturate-110"
+					>latest news</Link
 				>
 				<Button variant={"outline"}>legacy version</Button>
 			</div>

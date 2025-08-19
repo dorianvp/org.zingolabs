@@ -19,5 +19,6 @@ export default defineConfig({
 
 	redirects: {
 		"/": "/zingo",
+		"/zingo/blog": "/zingo/blog/first-post",
 	},
 });
